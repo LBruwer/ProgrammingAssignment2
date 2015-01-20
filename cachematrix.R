@@ -1,5 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Coursera R Programming Assignment2
+## This function will cache the inverse of
+## a supplied matrix
 
 ## Write a short comment describing this function
 
