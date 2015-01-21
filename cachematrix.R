@@ -1,12 +1,20 @@
-## Coursera R Programming Assignment2
-## This function will cache the inverse of
-## a supplied matrix
- 
+## Coursera R Programming Assignment2. This function will cache the inverse of
+## a supplied matrix.  To run, launch this program in R, then type mekecachematrix
+## at the prompt.  Create a matrix, for example x, run solve(x) at the prompt
+## example matrix: y <- rbind(c(1,-1),c(2,-1))
+## [,1] [,2]
+##   1   -1
+##   2   -1
+## inverse of y 
+## [,1] [,2]
+##  -1    1
+##  -2    1
+## to run type at prompt: cachesolve(makecachematrix(y))
 
-makecachcematrix <- function(x=matrix()) {
-  i <- NULL
+makecachematrix <- function(x=matrix()) {  # function makecachematrix
+  i <- NULL                                # set i equal to 0
   set <- function(matrix) {
-    m<<- matrix
+    m<<- matrix                            # <<- different environment from current
     i <<-NULL
   }
   get <-function(){
