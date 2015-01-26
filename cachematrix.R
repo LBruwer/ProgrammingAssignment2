@@ -1,6 +1,6 @@
 ## Coursera R Programming Assignment2. This function will cache the inverse of
-## a supplied matrix.  To run, launch this program in R, then type mekecachematrix
-## at the prompt.  Create a matrix, for example x, run solve(x) at the prompt
+## a supplied matrix.  To run, launch this program in R, then type makecachematrix
+## at the prompt.  Create a matrix, for example x.
 ## example matrix: y <- rbind(c(1,-1),c(2,-1))
 ## [,1] [,2]
 ##   1   -1
@@ -26,7 +26,7 @@ makecachematrix <- function(x=matrix()) {  # function makecachematrix
   getinverse<-function() {
     i
   }
-  
+  # The next part builds and returns the list for later use or update
   list(set=set,get=get,setinverse=setinverse,getinverse=getinverse)
 }
 
@@ -39,13 +39,13 @@ cachesolve <- function(x,...) {
   m <-x$getinverse()
   
   if(!is.null(m)) {
-    message("getting cached data")  ## display message to screen
-    return(m)
+    message("getting cached data")  # display message to screen
+    return(m)  # then return the cached inversed matrix
   }
   data <- x$get()
   
   m<- solve(data) %*% data
-  x$setinverse(m)
+  x$setinverse(m)  # store it in the cache function (floating variable)
   m
 }
 
