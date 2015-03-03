@@ -2,7 +2,7 @@
 # specially for large matrixes. To avoid repeating the computation of
 # the inverse of a matrix, the following functions are provided for 
 # caching and recovering the inverse of a matrix, computing it just
-# the first time # it is used:
+# the first time it is used:
 
 
 # A matrix and its inverse are cached in an object of type list with
@@ -15,6 +15,7 @@
 # returns the corresponding list.
 # Arguments:
 # - x: matrix that will be referenced by the list
+
 makeCacheMatrix <- function(x = matrix()) {
     # m: the inverse of the matrix, initially NULL until it is solved
     m <- NULL
@@ -42,6 +43,7 @@ makeCacheMatrix <- function(x = matrix()) {
 # function makeCacheMatrix.
 # Arguments: 
 # - x: list representation of a matrix
+
 cacheSolve <- function(x, ...) {
     # If the list representation already has the inverse of the matrix, 
     # return it
@@ -61,18 +63,18 @@ cacheSolve <- function(x, ...) {
 }
 
 
-# to run
-# y <- rbind(c(1,-1),c(2,-1))
-# y1 <- makeCacheMatrix(y)
-# cacheSolve(y1)
-# returns : solving... not cached
+## to run
+#  y <- rbind(c(1,-1),c(2,-1))
+#  y1 <- makeCacheMatrix(y)
+#  cacheSolve(y1)
+#  returns : solving... not cached
 #             [,1] [,2]
-#       [1,]   -1    1
-#       [2,]   -2    1
+#        [1,]   -1    1
+#        [2,]   -2    1
 
-# y1 <- makeCacheMatrix(y)
-# cacheSolve(y1)
-# returns : getting cached data
+#  y1 <- makeCacheMatrix(y)
+#  cacheSolve(y1)
+#  returns : getting cached data
 #             [,1] [,2]
-#       [1,]   -1    1
-#       [2,]   -2    1
+#        [1,]   -1    1
+#        [2,]   -2    1
